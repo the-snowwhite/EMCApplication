@@ -40,7 +40,7 @@ build-stamp:
 	    $(configure_realtime_arg) \
             $(enable_build_documentation) \
 	    --disable-check-runtime-deps \
-            --with-python=/usr/bin/python2.7
+            --with-python=/usr/bin/python3
 	(cd src; $(MAKE) $(MAKEFLAGS))
 	$(if $(enable_build_documentation),(cd src; $(MAKE) $(MAKEFLAGS) docs))
 	touch build-stamp
@@ -97,10 +97,10 @@ endif
 	(cd debian/tmp/usr/share/doc/linuxcnc/examples; \
 	    ln -sf ../../../linuxcnc/ncfiles ./nc_files)
 ifeq "$(kernel_version)" "machinekit-hal"
-	rm debian/tmp/usr/lib/python2.7/dist-packages/bitfile.py
-	rm debian/tmp/usr/lib/python2.7/dist-packages/hal.py
-	rm debian/tmp/usr/lib/python2.7/dist-packages/hal_glib.py
-	rm debian/tmp/usr/lib/python2.7/dist-packages/linux_event.py
+	rm debian/tmp/usr/lib/python3/dist-packages/bitfile.py
+	rm debian/tmp/usr/lib/python3/dist-packages/hal.py
+	rm debian/tmp/usr/lib/python3/dist-packages/hal_glib.py
+	rm debian/tmp/usr/lib/python3/dist-packages/linux_event.py
 	rm debian/tmp/usr/share/applications/linuxcnc-pncconf.desktop
 	rm debian/tmp/usr/share/applications/linuxcnc-stepconf.desktop
 	rm debian/tmp/usr/share/applications/linuxcnc-latency.desktop
