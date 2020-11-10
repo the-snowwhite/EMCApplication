@@ -80,8 +80,8 @@ EXTRA_FILES=
 EXTRA_BUILD=
 KERNEL_VERSION=$TARGET
 DRIVERS=drivers.files.in
-PYTHON_VERSION=$(python -c 'import sys; print sys.version[:3]')
-PYTHON_VERSION_NEXT=$(python -c 'import sys; print sys.version[:2] + str(1+int(sys.version[2]))')
+PYTHON_VERSION=$(python3 -c 'import sys; print (sys.version[:3])')
+PYTHON_VERSION_NEXT=$(python3 -c 'import sys; print (sys.version[:2] + str(1+int(sys.version[2])))')
 LIBREADLINE_DEV=libreadline-gplv2-dev
 INITRD_REALTIME_PATH=etc/init.d/realtime
 
@@ -161,7 +161,7 @@ fi
 if [ -n "$ENABLE_BUILD_DOCUMENTATION" ]; then
     DOC_DEPENDS='asciidoc (>= 8.5), dblatex (>= 0.2.12), docbook-xsl, \
         dvipng, ghostscript, graphviz, groff, imagemagick, inkscape, \
-        python-lxml, source-highlight, w3c-linkchecker, xsltproc, \
+        python3-lxml, source-highlight, w3c-linkchecker, xsltproc, \
         texlive-extra-utils, texlive-font-utils, texlive-fonts-recommended, \
         texlive-lang-cyrillic, texlive-lang-french, texlive-lang-german, \
         texlive-lang-polish, texlive-lang-spanish, texlive-latex-recommended'
@@ -172,7 +172,7 @@ fi
 MODUTILS_DEPENDS=kmod
 PYTHON_PACKAGING_DEPENDS=dh-python
 PYTHON_PACKAGING=dh_python2
-PYTHON_GST=python-gst0.10,gstreamer0.10-plugins-base
+PYTHON_GST=python3-gst-1.0,gstreamer1.0-plugins-base
 TCLTK_VERSION=8.6
 PYTHON_IMAGING="python${PYTHON_VERSION}-imaging | python-imaging | python-pil"
 PYTHON_IMAGING_TK="python${PYTHON_VERSION}-imaging-tk | python-imaging-tk | python-pil.imagetk"
@@ -180,11 +180,11 @@ YAPPS_RUNTIME="yapps2-runtime"
 STANDARDS_VERSION="3.9.3"
 
 case $DISTRIB_NAME in
-    Debian-10|Debian-10.*|Raspbian-10|Raspbian-10.*)
+    Ubuntu-20.*|Debian-10|Debian-10.*|Raspbian-10|Raspbian-10.*)
         DOC_DEPENDS="$DOC_DEPENDS, asciidoc-dblatex"
-        PYTHON_GST=python-gst-1.0,gstreamer1.0-plugins-base
-        EXTRA_BUILD=python-yapps
-        YAPPS_RUNTIME="python-yapps"
+        PYTHON_GST=python3-gst-1.0,gstreamer1.0-plugins-base
+        EXTRA_BUILD=python3-yapps
+        YAPPS_RUNTIME="python3-yapps"
         STANDARDS_VERSION="3.9.8"
         ;;
     Debian-9.*|Raspbian-9.*|LinuxMint-19.*|Ubuntu-18.*)
