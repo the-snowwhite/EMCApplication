@@ -1,3 +1,23 @@
+linuxcnc (2.9.0~pre0.23588.git65b3fe1e2~buster) Buster; urgency=low
+
+  * Machinekit EMCApplication is build from LinuxCNC code, but is not part of
+    LinuxCNC and as such the lower entries are NOT accurate
+  * Commit: 65b3fe1e21e3c5511ced43b548519035dbd9163a
+  * Add preview module
+  * Build as an 23588th rebuild for Debian Buster arm64
+
+ -- Holotronic <producer@holotronic.dk>  Sat, 21 Nov 2020 17:08:45 +0000
+
+linuxcnc (2.9.0~pre0.23588.git571129d6d~buster) Buster; urgency=low
+
+  * Machinekit EMCApplication is build from LinuxCNC code, but is not part of
+    LinuxCNC and as such the lower entries are NOT accurate
+  * Commit: 571129d6dc094fb78dd91cca06c1a4cc8f1709be
+  * Add preview module
+  * Build as an 23588th rebuild for Debian Buster amd64
+
+ -- Holotronic <producer@holotronic.dk>  Thu, 19 Nov 2020 01:08:25 +0000
+
 linuxcnc (1:2.9.0~pre0) stretch; urgency=medium
 
   * Master branch open for new features.
